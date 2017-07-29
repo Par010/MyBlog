@@ -1,0 +1,30 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=samm[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=myblog
+Group=www-data
+WorkingDirectory=/home/myblog/MyBlog
+ExecStart=/home/myblog/MyBlog/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/myblog/MyBlog/MyBlog.sock MyBlog.wsgi:application
+y
+Group=www-data
+WorkingDirectory=/home/sammy/myproject
+ExecStart=/home/sammy/myproject/myprojectenv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/sammy/myproject/myproject.sock myproject.wsgi:application
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=myblog
+Group=www-data
+WorkingDirectory=/home/myblog/MyBlog
+ExecStart=/home/myblog/MyBlog/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/myblog/MyBlog/MyBlog.sock MyBlog.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<title>MyBlog</title>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="{% url 'home'%}">MyBlog
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="mynav">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'about'%}">About</a></li>
+          <li><a>Twitter</a></li>
+          <li><a>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+
+<a href="{% url 'post_details' post.id %}"><h2>{{post.title}}</h2></a>
+<h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+ {{post.publish_date_simplified}}</h4>
+<br>
+<img src="{{post.image.url }}" class="img-responsive center-block" style="max-height: 500px;" />
+<br>
+{{post.text}}
+<br>
+<br>
+<hr>
+<div id="disqus_thread"></div>
+<script>
+
+
+var disqus_config = function () {
+this.page.identifier = 'post-{{post.id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://myblog-s1s3ejklec.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

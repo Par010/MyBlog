@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'sitepages/about.css'%}">
+<title>MyBlog</title>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="{% url 'home'%}">MyBlog
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="mynav">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'about'%}">About</a></li>
+          <li><a>Twitter</a></li>
+          <li><a>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <br>
+    {% load static %}
+    <img class="img-responsive center-block" src="{% static 'sitepages/PSX_20161015_132249.jpg' %}" style="max-height: 500px;">
+    <br>
+    <div class="col-lg-12 col-md-12 col-xs-12">
+		<div class=card>
+      <br>
+		<h3><strong>Paritosh Kondibhau Wadhavane</strong></h3>
+		<hr>
+		<h2>Front End Developer and designer</h2>
+		<br>
+		<h4>A 20 year old with true determination and passion for his work. He contributed in the project by providing front end expertise and working on the design and layout of the project. Other works to refer is Project Lumos. </h4>
+		<div class="social">
+		<a class="btn btn-social-icon btn-linkedin " href="https://in.linkedin.com/in/paritosh-wadhavane-801847123" target="_blank">
+    <span class="fa fa-linkedin"></span>
+    </a>
+    </div>
+    <br>
+		</div>
+		<br>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
